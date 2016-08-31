@@ -5,20 +5,20 @@ public class Prime {
 		public static void main(String[] args) {
 		System.out.println("Enter a number:");
 		Scanner Scan = new Scanner(System.in);
-		int i = Scan.nextInt();
+		int Number = Scan.nextInt();
 		int count =0;
-		for(int a=1;a<=i;a++)
+		for(int Iteration=1;Iteration<=Number;Iteration++)
 		{
-			if(i%a==0)
+			if(Number%Iteration==0)
 			{
 					count++;
 			}
 			
 		}
 			if(count==2)
-						System.out.println(i+" is a prime number");	
+						System.out.println(Number+" is a prime number");	
 			else
-				 System.out.println(i+"is not a prime number");
+				 System.out.println(Number+"is not a prime number");
 		}
 
 	}

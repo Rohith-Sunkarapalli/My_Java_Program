@@ -1,28 +1,29 @@
 package com.rohith.programs;
 
 import java.util.Scanner;
-
+//This functions takes two numbers as input and finds the gcd of those two numbers
 public class gcd {
-	public static void gcd1(int x, int y) {
-		int c;
-		c = x % y;
+	
+	public static void  findGcdOf(int FirstNumber, int SecondNumber) {
+		int Remainder;
+		Remainder = FirstNumber% SecondNumber;
 
-		if (c == 0)
-			System.out.println(y + " is the gcd of two numbers");
+		if (Remainder == 0)
+			System.out.println(SecondNumber+ " is the gcd of two numbers");
 		else
-			gcd1(y, c);
+			findGcdOf(SecondNumber,Remainder);
 
 	}
 
 	/**
-	 * This function calls the gcd function.
+	 * This function takes two numbers from user and calls the findGcdOf function.
 	 */
 	public static void main(String[] args) {
 		System.out.println("Enter two numbers:");
 		Scanner scan = new Scanner(System.in);
-		int x = scan.nextInt();
-		int y = scan.nextInt();
-		gcd1(x, y);
+		int FirstNumber = scan.nextInt();
+		int SecondNumber= scan.nextInt();
+		findGcdOf(FirstNumber,SecondNumber);
 
 	}
 

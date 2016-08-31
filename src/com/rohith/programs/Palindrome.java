@@ -2,32 +2,39 @@ package com.rohith.programs;
 import java.util.Scanner;
 
 public class Palindrome {
-	 
-	 public static void palindromeCheck(String i) 
+	 /* In this function a string is taken as input and checked
+	   whether it is palindrome or not */
+	 public static int checkForPalindrome(char[] input) 
      {
-		 String a,b;
-		 b = i;
-    	int x = i.length();
-    	int n=0;
-    	while(x>=0)
-    	{ 
-    		 a[n]= i[x];
-    		x--;
-    		n++;
-    	}
-    	if(a[] == b[])
+		
+    	int low=0,high;
+        int length= input.length;
+    	high=length-1;
+    	while(low<=high)
     	{
-    		System.out.println(i+" is a palindrome.");
-    	}
-    	else
-           System.out.println(i+" is not a palindrome");
+    		if(input[low]==input[high])
+    		{
+    			low++;
+    			high--;
+    		}
+    		else
+    		{
+    		System.out.println("given string is not a palindrome.");
+    		return 0;
+    		}
+    		}
+    	System.out.println("given string is palindrome");
+    	return 1;
      }
-	
+	/*In the main function we are taking the user input string 
+	 * and passing it to checkForPalindrome function.
+	 */
+	 
 	public static void main(String[] args) {
 		System.out.println("enter a number");
         Scanner Scan = new Scanner(System.in);
-        String i = Scan.nextLine();
-        palindromeCheck(i);
+        char[] input = Scan.next().toCharArray();
+        checkForPalindrome(input);
     }
 
 }
